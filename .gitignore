@@ -23,4 +23,5 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-src/pages/posts/.obsidian
+# obsidian config folder
+src/content/posts/.obsidian
