@@ -11,27 +11,35 @@ const posts = (await getCollection('posts')).sort(
 <BaseLayout>
   <main>
     <section>
-      <ul>
-        {
-          posts.map((post) => (
-            <li>
-              <a href={`/posts/${post.id}/`}>
-                <h4 class="title">{post.data.title}</h4>
-                <p class="date">
-                  <FormattedDate date={post.data.date} />
-                </p>
-              </a>
-            </li>
-          ))
-        }
+      <ul class="posts">
+        {posts.map((post) => (
+          <li>
+            <a href={`/posts/${post.id}/`}>
+              <h4 class="title">{post.data.title}</h4>
+              <ul class="tags">
+                {post.data.tags.map((tag) => (<li>{tag}</li>))}
+              </ul>
+              <FormattedDate date={post.data.date} />
+            </a>
+          </li>
+          ))}
       </ul>
     </section>
   </main>
 </BaseLayout>
+
 <style>
-li {
+
+.posts > li {
   list-style: none;
+  background-color: var(--white);
 }
 
+a > h4 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.tags > li {background-color: ;}
 
 </style>
