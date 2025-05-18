@@ -3,8 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+const posts = (await getCollection('posts')).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
 
@@ -15,11 +15,10 @@ const posts = (await getCollection('blog')).sort(
         {
           posts.map((post) => (
             <li>
-              <a href={`/blog/${post.id}/`}>
-                <img width={720} height={360} src={post.data.heroImage} alt="" />
+              <a href={`/posts/${post.id}/`}>
                 <h4 class="title">{post.data.title}</h4>
                 <p class="date">
-                  <FormattedDate date={post.data.pubDate} />
+                  <FormattedDate date={post.data.date} />
                 </p>
               </a>
             </li>
@@ -29,3 +28,10 @@ const posts = (await getCollection('blog')).sort(
     </section>
   </main>
 </BaseLayout>
+<style>
+li {
+  list-style: none;
+}
+
+
+</style>

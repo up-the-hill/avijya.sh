@@ -4,12 +4,25 @@ import Hero from '../components/Hero.astro';
 ---
 <Layout>
     <main>
-      <h1>Avijya Shrestha</h1>
+      <div class="hero">
+        <div class="intro">
+        Hi, I'm Avi. This is my webiste.
+        </div>
+        <!-- <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-compact-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 11l8 3l8 -3" /></svg> -->
+      </div>
     </main>
 </Layout>
 <style>
-main {
-  height: 90vh;
-}
-
+  main {
+    height: 60vh;
+    display: grid;
+  }
+  .hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: cent
+  }
+  
 </style>
+
