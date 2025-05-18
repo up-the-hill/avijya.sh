@@ -1,18 +1,21 @@
 import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-// import sanitizeHtml from "sanitize-html";
 
 export async function GET(context) {
-  const posts = await getCollection("posts");
+  const postImportResult = import.meta.glob("../content/posts/*.md", {
+    eager: true,
+  });
+  const posts = Object.values(postImportResult);
   return rss({
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     site: context.site,
-    items: posts.map((post) => ({
-      ...post.data,
-      link: `/posts/${post.id}/`,
-      content: sanitizeHtml(post.compiledContent()),
-    })),
+    items: await Promise.all(
+      posts.map(async (post) => ({
+        link: post.url,
+        content: await post.compiledContent(),
+        ...post.frontmatter,
+      })),
+    ),
   });
 }
