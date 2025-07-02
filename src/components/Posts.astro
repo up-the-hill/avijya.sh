@@ -1,0 +1,65 @@
+---
+
+import { getCollection } from 'astro:content';
+import FormattedDate from './FormattedDate.astro';
+
+const posts = (await getCollection('posts')).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+<section>
+  <h2>Posts</h2>
+  <ul class="posts">
+    {posts.map((post) => (
+      <li>
+        <a href={`/posts/${post.id}/`}>
+          <h3 class="title">{post.data.title}</h3>
+          <ul class="tags">
+            {post.data.tags.map((tag) => (<li>{tag}</li>))}
+          </ul>
+          <FormattedDate date={post.data.date} />
+        </a>
+      </li>
+      ))}
+  </ul>
+</section>
+
+<style>
+
+/* remove default styling */
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* styling  */
+a > h3 {
+  margin: 0;
+  color: var(--black);
+}
+
+.tags {
+  display: flex;
+}
+
+.tags > li {
+  background-color: var(--gray-light);
+  color: var(--gray-dark);
+  font-size: 1rem;
+  padding: 0 0.1rem;
+  margin: 0.1rem;
+}
+
+time {
+  background-color: var(--black);
+  font-size: 1rem;
+}
+
+</style>
