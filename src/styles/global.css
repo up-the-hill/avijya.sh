@@ -8,8 +8,8 @@
   --accent-dark: #d08159;
   --accent: oklch(66.6% 0.179 58.318);
   --black: oklch(0.1 0 0);
-  --gray-dark: oklch(0.3 0 0);
-  --gray-light: oklch(0.7 0 0);
+  --gray-dark: oklch(0.15 0 0);
+  --gray-light: oklch(0.85 0 0);
   --white: oklch(1 0 0);
 }
 
@@ -33,6 +33,50 @@ body {
     var(--white) 0.5px
   );
   background-size: 10px 10px;
+}
+
+a {
+  color: var(--black);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+.prose p {
+  margin-bottom: 2em;
+}
+
+@media (max-width: 720px) {
+  body {
+    font-size: 18px;
+  }
+
+  main {
+    padding: 1em;
+  }
+}
+
+.sr-only {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(1px 1px 1px 1px);
+  /* maybe deprecated but we need to support legacy browsers */
+  clip: rect(1px, 1px, 1px, 1px);
+  /* modern browsers, clip-path works inwards from each corner */
+  clip-path: inset(50%);
+  /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
+  white-space: nowrap;
 }
 
 main {
