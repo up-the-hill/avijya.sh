@@ -1,45 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
-
-const posts = (await getCollection('posts')).sort(
-	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-);
+import Posts from '../../components/Posts.astro';
 ---
 
 <BaseLayout>
-  <main>
-    <section>
-      <ul class="posts">
-        {posts.map((post) => (
-          <li>
-            <a href={`/posts/${post.id}/`}>
-              <h4 class="title">{post.data.title}</h4>
-              <ul class="tags">
-                {post.data.tags.map((tag) => (<li>{tag}</li>))}
-              </ul>
-              <FormattedDate date={post.data.date} />
-            </a>
-          </li>
-          ))}
-      </ul>
-    </section>
-  </main>
+  <Posts />
 </BaseLayout>
-
-<style>
-
-.posts > li {
-  list-style: none;
-  background-color: var(--white);
-}
-
-a > h4 {
-  font-size: 3rem;
-  margin: 0;
-}
-
-.tags > li {background-color: ;}
-
-</style>

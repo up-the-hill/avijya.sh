@@ -48,7 +48,7 @@ b {
 }
 
 a {
-  color: var(--accent);
+  color: var(--black);
 }
 
 a:hover {
