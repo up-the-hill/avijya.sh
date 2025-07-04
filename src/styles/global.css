@@ -108,6 +108,15 @@ main {
   padding: 3rem 1rem;
 }
 
+pre {
+  padding: 1rem;
+}
+
+code {
+  font-family: "JetBrains Mono Variable", sans-serif;
+  font-size: 1rem;
+}
+
 @media (max-width: 720px) {
   body {
     font-size: 18px;

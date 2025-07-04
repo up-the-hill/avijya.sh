@@ -16,11 +16,11 @@ After years of programming and getting stuck on deciding frameworks and language
 ## Basics
 
 ```perl
-  #!/usr/bin/perl
-  print "Status: 200";
-  print "Content-Type: text/plain";
-  print "";
-  print "Hello World!";
+#!/usr/bin/perl
+print "Status: 200";
+print "Content-Type: text/plain";
+print "";
+print "Hello World!";
 ```
 
 Just look at it. It looks almost stupidly simple, but after copying it to my `public_html` folder, it works _flawlessly_. Well, after forgetting to and then changing the executable permissions, it works _flawlessly_.
