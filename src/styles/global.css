@@ -19,8 +19,8 @@
     --accent: oklch(66.6% 0.179 58.318);
     --black: oklch(1 0 0);
     --gray-dark: oklch(0.85 0 0);
-    --gray-light: oklch(0.25 0 0);
-    --white: oklch(0.1 0 0);
+    --gray-light: oklch(0.3 0 0);
+    --white: oklch(0.15 0 0);
   }
 }
 
@@ -29,8 +29,8 @@ html.dark {
   --accent: oklch(66.6% 0.179 58.318);
   --black: oklch(1 0 0);
   --gray-dark: oklch(0.85 0 0);
-  --gray-light: oklch(0.25 0 0);
-  --white: oklch(0.1 0 0);
+  --gray-light: oklch(0.3 0 0);
+  --white: oklch(0.15 0 0);
 }
 
 html.light {
