@@ -24,7 +24,7 @@
   }
 }
 
-html[theme="dark"] {
+html.dark {
   --accent-dark: #d08159;
   --accent: oklch(66.6% 0.179 58.318);
   --black: oklch(1 0 0);
@@ -33,7 +33,7 @@ html[theme="dark"] {
   --white: oklch(0.1 0 0);
 }
 
-html[theme="light"] {
+html.light {
   --accent-dark: #d08159;
   --accent: oklch(66.6% 0.179 58.318);
   --black: oklch(0.1 0 0);
