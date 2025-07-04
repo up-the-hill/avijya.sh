@@ -70,6 +70,9 @@ a {
 
 a:hover {
   color: var(--accent);
+  transition-duration: 100ms;
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 p {
@@ -103,14 +106,6 @@ main {
   max-width: calc(100% - 2em);
   margin: auto;
   padding: 3rem 1rem;
-}
-
-a {
-  color: var(--black);
-}
-
-a:hover {
-  color: var(--accent);
 }
 
 @media (max-width: 720px) {
