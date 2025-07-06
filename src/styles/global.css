@@ -102,6 +102,7 @@ p {
 }
 
 main {
+  min-height: 60vh;
   width: 40rem;
   max-width: calc(100% - 2em);
   margin: auto;
