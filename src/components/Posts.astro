@@ -8,12 +8,11 @@ const posts = (await getCollection('posts')).sort(
 );
 ---
 <section>
-  <h2>Posts</h2>
   <ul class="posts">
     {posts.map((post) => (
       <li>
         <a href={`/posts/${post.id}/`}>
-          <h3 class="title">{post.data.title}</h3>
+          <h2 class="title">{post.data.title}</h2>
           <ul class="tags">
             {post.data.tags.map((tag) => (<li>{tag}</li>))}
           </ul>
@@ -45,9 +44,10 @@ a:hover {
 
 /* styling  */
 
-a > h3 {
+a > h2 {
   margin: 0;
   color: var(--black);
+  font-weight: 900;
 }
 
 .posts > li {
@@ -64,5 +64,9 @@ a > h3 {
   font-size: 1rem;
   padding: 0 0.1rem;
   margin: 0.1rem;
+}
+
+section {
+  margin-top: 2rem
 }
 </style>
