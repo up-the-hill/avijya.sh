@@ -56,12 +56,12 @@ body {
   line-height: 1.7;
   /* dot grid background */
   background-color: var(--white);
-  opacity: 0.8;
-  background-image: radial-gradient(
-    var(--gray-light) 0.5px,
-    var(--white) 0.5px
-  );
-  background-size: 10px 10px;
+  /* opacity: 0.8; */
+  /* background-image: radial-gradient( */
+  /*   var(--gray-light) 0.5px, */
+  /*   var(--white) 0.5px */
+  /* ); */
+  /* background-size: 10px 10px; */
 }
 
 a {
@@ -123,6 +123,8 @@ code {
   }
 
   main {
-    padding: 1em;
+    padding: 2rem;
+    width: auto;
+    height: 60vh;
   }
 }
