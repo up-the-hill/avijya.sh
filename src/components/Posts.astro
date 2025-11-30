@@ -1,72 +1,42 @@
 ---
+import { getCollection } from "astro:content";
+import PostCard from "./PostCard.astro";
 
-import { getCollection } from 'astro:content';
-import FormattedDate from './FormattedDate.astro';
-
-const posts = (await getCollection('posts')).sort(
-	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+const posts = (await getCollection("posts")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
+
 <section>
+  <h1>Posts</h1>
   <ul class="posts">
-    {posts.map((post) => (
-      <li>
-        <a href={`/posts/${post.id}/`}>
-          <h2 class="title">{post.data.title}</h2>
-          <ul class="tags">
-            {post.data.tags.map((tag) => (<li>{tag}</li>))}
-          </ul>
-          <FormattedDate date={post.data.date} />
-        </a>
-      </li>
-      ))}
+    {posts.map((post) => <PostCard postData={post} />)}
   </ul>
 </section>
 
 <style>
+  /* remove default styling */
+  h1 {
+    margin: 0;
+  }
+  ul {
+    padding: 0;
+  }
 
-/* remove default styling */
-ul {
-  padding: 0;
-}
+  .posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
 
-li {
-  list-style: none;
-}
+  @media (max-width: 720px) {
+    .posts {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
 
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--black);
-}
-
-/* styling  */
-
-a > h2 {
-  margin: 0;
-  color: var(--black);
-  font-weight: 900;
-}
-
-.posts > li {
-  margin: 1rem 0;
-}
-
-.tags {
-  display: flex;
-}
-
-.tags > li {
-  background-color: var(--gray-light);
-  color: var(--gray-dark);
-  font-size: 1rem;
-  padding: 0 0.1rem;
-  margin: 0.1rem;
-}
-
-section {
-  margin-top: 2rem
-}
+  /* section { */
+  /*   margin-top: 2rem; */
+  /* } */
 </style>

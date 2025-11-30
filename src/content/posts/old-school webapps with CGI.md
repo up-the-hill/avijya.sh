@@ -1,6 +1,6 @@
 ---
 title: "Old-school Web Apps using CGI"
-description: ""
+description: "A quick overview and showcase on making CGI apps."
 date: "2025-05-19"
 tags: ["linux", "webdev"]
 ---

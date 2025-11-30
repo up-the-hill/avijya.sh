@@ -1,6 +1,6 @@
 ---
 title: "dotfiles"
-description: ""
+description: "A quick post for anyone interested in my dotfiles: how I've set it up for git, workflow, tools, etc."
 date: "2025-05-18"
 tags: ["linux"]
 ---
