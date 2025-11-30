@@ -69,13 +69,12 @@ body {
 
 a {
   color: var(--black);
+  transition: color 0.2s;
 }
 
 a:hover {
   color: var(--accent);
-  transition-duration: 100ms;
-  transition-property: color;
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: none;
 }
 
 p {
