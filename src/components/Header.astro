@@ -1,45 +1,66 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
 ---
 
 <header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">home</HeaderLink>
-			<HeaderLink href="/posts">posts</HeaderLink>
-			<HeaderLink href="/about">about</HeaderLink>
-		</div>
-	</nav>
+  <nav>
+    <h2><a href="/">{SITE_TITLE}</a></h2>
+    <div class="internal-links">
+      <!-- <HeaderLink href="/">home</HeaderLink> -->
+      <HeaderLink href="/posts">posts</HeaderLink>
+      <HeaderLink href="/projects">projects</HeaderLink>
+      <HeaderLink href="/about">about</HeaderLink>
+    </div>
+  </nav>
 </header>
-<style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-    height: 10vh;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
+<style>
+  header {
+    margin: 0;
+    padding: 0 1em;
+    height: 10vh;
+  }
+  h2 {
+    margin: 0;
+    font-size: 1em;
+  }
+
+  h2 a,
+  h2 a.active {
+    text-decoration: none;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav a {
+    padding: 1em 0.5em;
+    border-bottom: 4px solid transparent;
+    text-decoration: none;
+  }
+  h2 > a {
+    background-image: linear-gradient(
+      to right,
+      var(--accent) 50%,
+      var(--black) 50%
+    );
+    background-size: 200% 100%;
+    background-position: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: background-position 0.3s;
+  }
+
+  h2 > a:hover {
+    background-position: 0 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    h2 > a {
+      transition: none;
+    }
+  }
 </style>
