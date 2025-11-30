@@ -1,5 +1,7 @@
 ---
+
 ---
+
 <select id="themeSelector">
   <option value="" selected="">System</option>
   <option value="light">Light</option>
@@ -8,41 +10,51 @@
 
 <script is:inline>
   const theme = (() => {
-    const localStorageTheme = localStorage?.getItem("theme") ?? '';
-    if (['dark', 'light'].includes(localStorageTheme)) {
+    const localStorageTheme = localStorage?.getItem("theme") ?? "";
+    if (["dark", "light"].includes(localStorageTheme)) {
       return localStorageTheme;
     }
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark';
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
     }
-      return 'light';
+    return "light";
   })();
 
-  if (theme === 'light') {
-    document.documentElement.classList.remove('dark');
+  if (theme === "light") {
+    document.documentElement.classList.remove("dark");
   } else {
-    document.documentElement.classList.add('dark');
+    document.documentElement.classList.add("dark");
   }
 
-  window.localStorage.setItem('theme', theme);
+  window.localStorage.setItem("theme", theme);
 
-const handleThemeChange = (event) => {
-  const selectedTheme = event.target.value;
-  const element = document.documentElement;
+  const handleThemeChange = (event) => {
+    const selectedTheme = event.target.value;
+    const element = document.documentElement;
 
-  if (selectedTheme === "dark") {
-    element.classList.remove("light");
-    element.classList.add("dark");
-  } else if (selectedTheme == "light"){
-    element.classList.remove("dark");
-    element.classList.add("light");
-  } else {
-    element.classList.remove("light");
-    element.classList.remove("dark");
-  }
+    if (selectedTheme === "dark") {
+      element.classList.remove("light");
+      element.classList.add("dark");
+    } else if (selectedTheme == "light") {
+      element.classList.remove("dark");
+      element.classList.add("light");
+    } else {
+      element.classList.remove("light");
+      element.classList.remove("dark");
+    }
 
-  localStorage.setItem("theme", selectedTheme);
-}
+    localStorage.setItem("theme", selectedTheme);
+  };
 
-document.getElementById("themeSelector")?.addEventListener("change", handleThemeChange);
+  document
+    .getElementById("themeSelector")
+    ?.addEventListener("change", handleThemeChange);
 </script>
+
+<style>
+  select {
+    background-color: var(--white);
+    color: var(--black);
+    border: none;
+  }
+</style>
