@@ -13,7 +13,7 @@ const { postData } = Astro.props;
   <FormattedDate date={postData.data.date} />
   <p>{postData.data.description}</p>
   <a href={`/posts/${postData.id}/`}>
-    <p>
+    <span>
       <b class="read-more-link"
         >Read more
 
@@ -33,13 +33,13 @@ const { postData } = Astro.props;
           <path d="M15 8l4 4"></path>
         </svg>
       </b>
-    </p>
+    </span>
   </a>
 </li>
 
 <style>
   .read-more-link {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.25rem; /* Adjust as needed */
   }
