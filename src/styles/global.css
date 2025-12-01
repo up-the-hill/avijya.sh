@@ -68,6 +68,8 @@ h4,
 h5,
 h6 {
   text-wrap: balance;
+  /* better title tracking */
+  letter-spacing: -0.04em;
 }
 
 /*
@@ -192,7 +194,7 @@ p {
 
 main {
   min-height: 75vh;
-  width: 60rem;
+  width: 66rem;
   max-width: calc(100% - 2em);
   margin: auto;
   padding: 3rem 1rem;
