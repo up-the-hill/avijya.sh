@@ -4,44 +4,47 @@ const { postData } = Astro.props;
 ---
 
 <li class="card">
-  <a href={`/posts/${postData.id}/`}>
-    <h2 class="title">{postData.data.title}</h2>
-  </a>
-  <ul class="tags">
-    {postData.data.tags.map((tag) => <li>{tag}</li>)}
-  </ul>
-  <FormattedDate date={postData.data.date} />
-  <p>{postData.data.description}</p>
-  <a href={`/posts/${postData.id}/`}>
-    <span>
-      <b class="read-more-link"
-        >Read more
+  <div class="card-main">
+    <FormattedDate date={postData.data.date} />
+    <a href={`/posts/${postData.id}/`}>
+      <h2 class="title">{postData.data.title}</h2>
+    </a>
+    <ul class="tags">
+      {postData.data.tags.map((tag) => <li>{tag}</li>)}
+    </ul>
+    <p>{postData.data.description}</p>
+  </div>
+  <div class="card-footer">
+    <a href={`/posts/${postData.id}/`}>
+      <span>
+        <b class="read-more-link"
+          >Read more
 
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="M5 12h.5m3 0h1.5m3 0h6"></path>
-          <path d="M15 16l4 -4"></path>
-          <path d="M15 8l4 4"></path>
-        </svg>
-      </b>
-    </span>
-  </a>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h.5m3 0h1.5m3 0h6"></path>
+            <path d="M15 16l4 -4"></path>
+            <path d="M15 8l4 4"></path>
+          </svg>
+        </b>
+      </span>
+    </a>
+  </div>
 </li>
 
 <style>
   .read-more-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.25rem; /* Adjust as needed */
   }
 
   /* remove default styling */
@@ -60,13 +63,17 @@ const { postData } = Astro.props;
   }
 
   .card {
+    display: flex;
+    flex-direction: column;
     padding: 1.5rem 2rem;
     border-width: 2px;
-    border-color: var(--gray-light);
+    border-color: var(--black);
     border-radius: 1em;
     border-style: solid;
-    font-size: 1rem;
+    /* font-size: 1rem; */
     transition: all 0.5s;
+    box-shadow: 6px 6px;
+    will-change: transform;
   }
 
   .card:hover {
@@ -75,12 +82,24 @@ const { postData } = Astro.props;
       transform: translateX(0);
       opacity: 1;
     }
-    box-shadow: 10px 10px;
-    transition: all 0.2s;
+    box-shadow: 0px 0px;
+    transform: translate3d(6px, 6px, 0);
+    transition: all 0.2s ease-out;
+  }
+
+  .card-main {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .card-footer {
+    margin-top: auto;
   }
 
   a {
     text-decoration: none;
+    display: inline;
   }
 
   svg {
@@ -100,8 +119,9 @@ const { postData } = Astro.props;
     background-color: var(--gray-light);
     color: var(--gray-dark);
     font-size: 1rem;
-    padding: 0 0.1rem;
+    padding: 0.1rem 0.5rem;
     margin: 0.1rem;
+    border-radius: 999px;
   }
 
   @media (prefers-reduced-motion: reduce) {

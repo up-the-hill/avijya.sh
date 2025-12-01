@@ -1,21 +1,162 @@
 ---
-import Layout from '../layouts/BaseLayout.astro';
----
-<Layout>
-  <div class="hero">
-    <div class="intro">
-    Hi, I'm Avi. This is my website.
-    </div>
-    <!-- <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-compact-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 11l8 3l8 -3" /></svg> -->
-  </div>
-</Layout>
-<style>
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  min-height: 60vh;
-}
-</style>
+import Layout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import PostCard from "../components/PostCard.astro";
 
+const posts = (await getCollection("posts"))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3); // Get top 3 recent posts
+---
+
+<Layout>
+  <section class="hero">
+    <div class="intro">
+      <h1 class="greeting">Hi, I'm Avi.</h1>
+      <p class="bio">
+        I'm a developer who's all about having fun. There is joy and art to be
+        found in technology, and I enjoy making that apparent in my work.
+      </p>
+      <div class="actions">
+        <a href="/about" class="btn primary">More about me</a>
+        <a href="/projects" class="btn secondary">See my projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="recent-posts"> -->
+  <!--   <div class="section-header"> -->
+  <!--     <h2>Recent Posts</h2> -->
+  <!--     <a href="/posts" class="view-all">View all &rarr;</a> -->
+  <!--   </div> -->
+  <!--   <ul class="posts-grid"> -->
+  <!--     {posts.map((post) => <PostCard postData={post} />)} -->
+  <!--   </ul> -->
+  <!-- </section> -->
+</Layout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 40vh;
+  }
+
+  .intro {
+    height: 100%;
+  }
+
+  .greeting {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+  }
+
+  .bio {
+    font-size: 1.25rem;
+    color: var(--gray-dark);
+    max-width: 50ch;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--black);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+    box-shadow: 6px 6px;
+    will-change: transform;
+  }
+
+  .btn:hover {
+    transform: translate3d(6px, 6px, 0);
+    box-shadow: 0px 0px;
+  }
+
+  .btn.primary {
+    background-color: var(--accent);
+    color: var(--black);
+  }
+
+  .btn.primary:hover {
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  .btn.secondary {
+    background-color: transparent;
+    color: var(--black);
+    border: 2px solid var(--gray-light);
+  }
+
+  .btn.secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* Recent Posts Section */
+  /* .recent-posts { */
+  /*   margin-top: 3rem; */
+  /*   padding-top: 2rem; */
+  /*   border-top: 1px dashed var(--gray-light); */
+  /* } */
+  /**/
+  /* .section-header { */
+  /*   display: flex; */
+  /*   justify-content: space-between; */
+  /*   align-items: baseline; */
+  /*   margin-bottom: 2rem; */
+  /* } */
+  /**/
+  /* .section-header h2 { */
+  /*   font-size: 2rem; */
+  /*   margin: 0; */
+  /* } */
+  /**/
+  /* .view-all { */
+  /*   font-size: 1rem; */
+  /*   color: var(--accent); */
+  /*   text-decoration: none; */
+  /*   font-weight: 600; */
+  /* } */
+  /**/
+  /* .view-all:hover { */
+  /*   text-decoration: underline; */
+  /* } */
+  /**/
+  /* .posts-grid { */
+  /*   display: grid; */
+  /*   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  /*   gap: 2rem; */
+  /*   padding: 0; */
+  /*   list-style: none; */
+  /* } */
+
+  @media (max-width: 720px) {
+    .greeting {
+      font-size: 2.5rem;
+    }
+    .bio {
+      font-size: 1.1rem;
+    }
+    .posts-grid {
+      grid-template-columns: 1fr;
+    }
+    .section-header {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+</style>
