@@ -86,4 +86,9 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
     transition: transform 0.2s;
     transform: translateY(-2px);
   }
+  @media (prefers-reduced-motion: reduce) {
+    .social-links a {
+      transition: none;
+    }
+  }
 </style>

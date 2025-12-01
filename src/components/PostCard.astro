@@ -60,12 +60,13 @@ const { postData } = Astro.props;
   }
 
   .card {
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
     border-width: 2px;
     border-color: var(--gray-light);
     border-radius: 1em;
     border-style: solid;
     font-size: 1rem;
+    transition: all 0.5s;
   }
 
   .card:hover {
@@ -74,6 +75,8 @@ const { postData } = Astro.props;
       transform: translateX(0);
       opacity: 1;
     }
+    box-shadow: 10px 10px;
+    transition: all 0.2s;
   }
 
   a {
@@ -83,7 +86,9 @@ const { postData } = Astro.props;
   svg {
     opacity: 0;
     transform: translateX(-24px);
-    transition: all 0.2s;
+    transition:
+      transform 0.5s,
+      opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   /* tags */
@@ -97,5 +102,14 @@ const { postData } = Astro.props;
     font-size: 1rem;
     padding: 0 0.1rem;
     margin: 0.1rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    svg {
+      transition: none;
+    }
+    .card {
+      transition: none;
+    }
   }
 </style>

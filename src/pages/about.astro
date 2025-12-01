@@ -3,15 +3,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="About Me" description="About page of Avijya Shrestha">
-  <h1>Avijya Shrestha</h1>
-  <p>Software dev, linux enthusiast and (aspiring) game dev.</p>
+  <div class="about">
+    <h1>Avijya Shrestha</h1>
+    <p>Software dev, linux enthusiast and (aspiring) game dev.</p>
 
-  <p>I like to:</p>
-  <ul>
-    <li><a href="https://github.com/up-the-hill">make software</a></li>
-    <li>play chess</li>
-    <li>muck about in my dotfiles</li>
-  </ul>
+    <p>I like to:</p>
+    <ul>
+      <li><a href="https://github.com/up-the-hill">make software</a></li>
+      <li>play chess</li>
+      <li>muck about in my dotfiles</li>
+    </ul>
 
-  <p>Reach me at: <a href="mailto:hello@avijya.sh">hello@avijya.sh</a></p>
+    <p>Reach me at: <a href="mailto:hello@avijya.sh">hello@avijya.sh</a></p>
+  </div>
+  <style>
+    .about {
+      display: grid;
+      align-content: center;
+      min-height: calc(75vh - 6rem);
+    }
+  </style>
 </BaseLayout>

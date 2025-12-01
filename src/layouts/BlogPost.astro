@@ -1,38 +1,49 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
 
-type Props = CollectionEntry<'posts'>['data'];
+type Props = CollectionEntry<"posts">["data"];
 
 const { title, description, date, updatedDate } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-			}
-		</style>
-	</head>
+  <head>
+    <BaseHead title={title} description={description} />
+    <style>
+      .title {
+        margin-bottom: 2em;
+        padding: 1em 0;
+        text-align: center;
+        line-height: 1;
+      }
+      .title h1 {
+        margin: 0;
+      }
+      .date {
+        margin-bottom: 0.5em;
+      }
 
-	<body>
-		<Header />
-		<main>
-			<article>
+      /* Styles for headers within the blog post content */
+      article :global(h1),
+      article :global(h2),
+      article :global(h3),
+      article :global(h4),
+      article :global(h5),
+      article :global(h6) {
+        margin-top: 1.5em;
+        margin-bottom: 0.75em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <article>
         <div class="title">
           <div class="date">
             <FormattedDate date={date} />
@@ -47,8 +58,8 @@ const { title, description, date, updatedDate } = Astro.props;
           <h1>{title}</h1>
         </div>
         <slot />
-			</article>
-		</main>
-		<Footer />
-	</body>
+      </article>
+    </main>
+    <Footer />
+  </body>
 </html>
