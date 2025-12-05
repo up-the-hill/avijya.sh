@@ -13,8 +13,8 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
         stroke="currentColor"
         stroke-linecap="round"
         stroke-linejoin="round"
-        width="24"
-        height="24"
+        width="32"
+        height="32"
         stroke-width="2"
       >
         <path
@@ -26,8 +26,8 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
       <span class="sr-only">Public Key</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width="32"
+        height="32"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -50,8 +50,8 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
         stroke="currentColor"
         stroke-linecap="round"
         stroke-linejoin="round"
-        width="24"
-        height="24"
+        width="32"
+        height="32"
         stroke-width="2"
       >
         <path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
@@ -62,6 +62,38 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
   </div>
   <!-- <ThemeSwitcher /> -->
 </footer>
+
+<script>
+  import { animate } from "motion";
+
+  const links = document.querySelectorAll(".social-links a");
+
+  links.forEach((link) => {
+    link.addEventListener("mouseenter", () => {
+      const timing = 150;
+
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      if (prefersReducedMotion) return;
+
+      animate(
+        link,
+        { rotate: 10 },
+        { type: "spring", stiffness: 400, damping: 10, mass: 1 },
+      );
+
+      setTimeout(() => {
+        animate(
+          link,
+          { rotate: 0 },
+          { type: "spring", stiffness: 600, damping: 10, mass: 1 },
+        );
+      }, timing);
+    });
+  });
+</script>
+
 <style>
   footer {
     padding: 2em 1em;
@@ -79,12 +111,10 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
   .social-links a {
     text-decoration: none;
     color: var(--black);
-    transition: all 0.5s;
+    transition: color 0.5s;
   }
   .social-links a:hover {
     color: var(--accent);
-    transition: transform 0.2s;
-    transform: translateY(-2px);
   }
   @media (prefers-reduced-motion: reduce) {
     .social-links a {
