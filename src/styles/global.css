@@ -215,6 +215,7 @@ code {
   }
 
   main {
+    min-height: 65vh;
     padding: 2rem;
     width: auto;
   }
