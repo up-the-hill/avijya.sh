@@ -137,7 +137,7 @@ body {
   overflow-wrap: break-word;
   color: var(--black);
   font-size: 20px;
-  line-height: 1.7;
+  line-height: 1.6;
   /* reduce opacity to reduce contrast, ig? */
   opacity: 0.9;
   /* dot grid background */

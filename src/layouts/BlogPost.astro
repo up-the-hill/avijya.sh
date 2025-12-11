@@ -21,6 +21,7 @@ const { title, description, date, updatedDate } = Astro.props;
         line-height: 1;
       }
       .title h1 {
+        font-size: 4rem;
         margin: 0;
       }
       .date {
@@ -34,8 +35,15 @@ const { title, description, date, updatedDate } = Astro.props;
       article :global(h4),
       article :global(h5),
       article :global(h6) {
-        margin-top: 1.5em;
-        margin-bottom: 0.75em;
+        margin-top: 1em;
+        margin-bottom: 0.25em;
+        font-family: "Manrope Variable", sans-serif;
+      }
+
+      content {
+        font-family: serif;
+      }
+      pre {
       }
     </style>
   </head>
@@ -57,7 +65,9 @@ const { title, description, date, updatedDate } = Astro.props;
           </div>
           <h1>{title}</h1>
         </div>
-        <slot />
+        <content>
+          <slot />
+        </content>
       </article>
     </main>
     <Footer />
