@@ -17,6 +17,9 @@ importers:
       '@astrojs/sitemap':
         specifier: ^3.6.0
         version: 3.6.0
+      '@fontsource-variable/alegreya':
+        specifier: ^5.2.8
+        version: 5.2.8
       '@fontsource-variable/jetbrains-mono':
         specifier: ^5.2.6
         version: 5.2.6
@@ -244,6 +247,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource-variable/alegreya@5.2.8':
+    resolution: {integrity: sha512-gQcIA7j76KYTOcdkfo1Xee9xLBi5mya4qTkzlgeoHf9SjOL/gJj5GSSOg/7ba/ciUU18K92i7VGxXzFhDsowGg==}
 
   '@fontsource-variable/jetbrains-mono@5.2.6':
     resolution: {integrity: sha512-1pvtyK6H1paBOixbtZ9xfQgArVQ4SJMW3WSGZPOd5PiW3yg0t8umwKnjDMzW2ofb7qSdiXnsnIaHPT36vEOdlg==}
@@ -1963,6 +1969,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.25.4':
     optional: true
+
+  '@fontsource-variable/alegreya@5.2.8': {}
 
   '@fontsource-variable/jetbrains-mono@5.2.6': {}
 

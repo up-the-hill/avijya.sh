@@ -1,22 +1,23 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
-import { SITE_TITLE } from '../consts';
+import "../styles/global.css";
+import { SITE_TITLE } from "../consts";
 
 // Import fonts
-import '@fontsource-variable/manrope';
-import '@fontsource-variable/jetbrains-mono'
+import "@fontsource-variable/manrope";
+import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/alegreya";
 
 interface Props {
-	title: string;
-	description: string;
-	image?: string;
+  title: string;
+  description: string;
+  image?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
+const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -25,10 +26,10 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link
-	rel="alternate"
-	type="application/rss+xml"
-	title={SITE_TITLE}
-	href={new URL('rss.xml', Astro.site)}
+  rel="alternate"
+  type="application/rss+xml"
+  title={SITE_TITLE}
+  href={new URL("rss.xml", Astro.site)}
 />
 <meta name="generator" content={Astro.generator} />
 

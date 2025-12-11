@@ -12,6 +12,7 @@
     "@astrojs/mdx": "^4.3.12",
     "@astrojs/rss": "^4.0.14",
     "@astrojs/sitemap": "^3.6.0",
+    "@fontsource-variable/alegreya": "^5.2.8",
     "@fontsource-variable/jetbrains-mono": "^5.2.6",
     "@fontsource-variable/manrope": "^5.2.5",
     "astro": "^5.16.0",
