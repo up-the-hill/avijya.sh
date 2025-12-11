@@ -193,6 +193,7 @@ p {
 }
 
 main {
+  display: grid;
   min-height: 75vh;
   width: 66rem;
   max-width: calc(100% - 2em);
