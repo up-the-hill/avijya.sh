@@ -194,7 +194,7 @@ p {
 
 main {
   display: grid;
-  min-height: 75vh;
+  min-height: 75dvh;
   width: 66rem;
   max-width: calc(100% - 2em);
   margin: auto;
@@ -210,13 +210,16 @@ code {
   font-size: 1rem;
 }
 
+h1 {
+  font-size: 3rem;
+}
+
 @media (max-width: 720px) {
   body {
     font-size: 18px;
   }
 
   main {
-    min-height: 65vh;
     padding: 2rem;
     width: auto;
   }
