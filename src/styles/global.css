@@ -68,8 +68,6 @@ h4,
 h5,
 h6 {
   text-wrap: balance;
-  /* better title tracking */
-  letter-spacing: -0.04em;
 }
 
 /*
@@ -81,12 +79,28 @@ h6 {
 }
 
 /*
-  Credits: 
+  my additions to css reset
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* better title tracking */
+  letter-spacing: -0.05em;
+}
+
+:root {
+  font-display: block;
+}
+
+
+/*
+  Credits:
   CSS by:
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
  */
-
-
 
 :root {
   --accent-dark: #d08159;
@@ -192,6 +206,7 @@ p {
   white-space: nowrap;
 }
 
+/* my styles */
 main {
   display: grid;
   min-height: 75dvh;
