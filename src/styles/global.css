@@ -142,7 +142,6 @@ html.light {
 
 body {
   font-family: "Manrope Variable", sans-serif;
-  font-display: swap;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -216,8 +215,25 @@ main {
   padding: 3rem 1rem;
 }
 
+article {
+  min-width: 0;
+}
+
 pre {
   padding: 1rem;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+pre code {
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+}
+
+pre span {
+  max-width: none;
 }
 
 code {
@@ -226,7 +242,13 @@ code {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 6rem;
+  line-height: 7rem;
+
+  @media (max-width:720px) {
+    font-size: 4rem;
+    line-height: 4.5rem;
+  }
 }
 
 @media (max-width: 720px) {
@@ -235,7 +257,13 @@ h1 {
   }
 
   main {
-    padding: 2rem;
+    padding: 1rem;
     width: auto;
   }
+}
+
+@font-face {
+  font-family: "Manrope Variable";
+  src: url("./Manrope-VariableFont_wght.ttf") format("truetype");
+  font-display: block;
 }

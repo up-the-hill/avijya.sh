@@ -23,9 +23,6 @@ importers:
       '@fontsource-variable/jetbrains-mono':
         specifier: ^5.2.6
         version: 5.2.6
-      '@fontsource-variable/manrope':
-        specifier: ^5.2.5
-        version: 5.2.5
       astro:
         specifier: ^5.16.0
         version: 5.16.0(@types/node@22.15.18)(rollup@4.41.0)(typescript@5.8.3)
@@ -253,9 +250,6 @@ packages:
 
   '@fontsource-variable/jetbrains-mono@5.2.6':
     resolution: {integrity: sha512-1pvtyK6H1paBOixbtZ9xfQgArVQ4SJMW3WSGZPOd5PiW3yg0t8umwKnjDMzW2ofb7qSdiXnsnIaHPT36vEOdlg==}
-
-  '@fontsource-variable/manrope@5.2.5':
-    resolution: {integrity: sha512-6Mo3ldtgAhxvSSyy+bLbFRjkiYhVo6RLcasJfj9Du5k2nX16/RwjQdBbZJfvsofVt6GqQ+O6AVkazmS3Xw5R9A==}
 
   '@img/colour@1.0.0':
     resolution: {integrity: sha512-A5P/LfWGFSl6nsckYtjw9da+19jB8hkJ6ACTGcDfEJ0aE+l2n2El7dsVM7UVHZQ9s2lmYMWlrS21YLy2IR1LUw==}
@@ -1973,8 +1967,6 @@ snapshots:
   '@fontsource-variable/alegreya@5.2.8': {}
 
   '@fontsource-variable/jetbrains-mono@5.2.6': {}
-
-  '@fontsource-variable/manrope@5.2.5': {}
 
   '@img/colour@1.0.0':
     optional: true
