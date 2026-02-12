@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/BaseLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import blackoutImage from "../assets/blackout.png";
+import sunsetsImage from "../assets/sunsets.png";
 ---
 
 <Layout>
@@ -10,19 +12,20 @@ import ProjectCard from "../components/ProjectCard.astro";
       <ProjectCard
         title="blackout"
         description="An extension to make blackout poetry on the interwebs. Select text you want to black out and create poetry."
-        image="https://placehold.co/600x400?text=blackout"
+        image={blackoutImage}
         github="https://github.com/up-the-hill/blackout"
         links={{
           Firefox:
             "https://addons.mozilla.org/en-US/firefox/addon/blackout-poetry/",
-          "Chrome/Brave": "https://github.com/up-the-hill/blackout",
+          "Chrome/Brave":
+            "https://chromewebstore.google.com/detail/ffcdlpjolgglihiapammdhbdogcgjbki/",
         }}
         tags={["web extension", "poetry"]}
       />
       <ProjectCard
         title="sunsets on a map"
         description="Post your sunsets on a publicly available map and see sunsets around the world."
-        image="https://placehold.co/600x400?text=sunsets-on-a-map"
+        image={sunsetsImage}
         github="https://github.com/up-the-hill/sunsets-on-a-map"
         links={{
           Live: "https://sunsets-on-a-map.com/",
@@ -51,4 +54,3 @@ import ProjectCard from "../components/ProjectCard.astro";
     }
   }
 </style>
-

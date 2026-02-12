@@ -2,12 +2,13 @@
 interface Props {
   title: string;
   description: string;
-  image?: string;
+  image?: ImageMetadata;
   github?: string;
   links?: Record<string, string>;
   tags?: string[];
 }
 
+import { Image } from "astro:assets";
 const { title, description, image, github, links, tags = [] } = Astro.props;
 ---
 
@@ -15,7 +16,7 @@ const { title, description, image, github, links, tags = [] } = Astro.props;
   {
     image && (
       <div class="card-image">
-        <img src={image} alt={title} />
+        <Image src={image} alt={title} />
       </div>
     )
   }
@@ -203,4 +204,3 @@ const { title, description, image, github, links, tags = [] } = Astro.props;
     }
   }
 </style>
-
