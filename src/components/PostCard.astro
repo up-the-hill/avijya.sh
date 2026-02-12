@@ -12,7 +12,7 @@ const { postData } = Astro.props;
     <ul class="tags">
       {postData.data.tags.map((tag) => <li>{tag}</li>)}
     </ul>
-    <p>{postData.data.description}</p>
+    <p class="description">{postData.data.description}</p>
   </div>
   <div class="card-footer">
     <a href={`/posts/${postData.id}/`}>
@@ -143,5 +143,10 @@ const { postData } = Astro.props;
     .card {
       transition: none;
     }
+  }
+
+  .description {
+    font-family: serif;
+    color: var(--gray-dark);
   }
 </style>
