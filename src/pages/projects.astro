@@ -1,7 +1,43 @@
 ---
 import Layout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 ---
 
 <Layout>
-  <h1>Projects</h1>
+  <section>
+    <h1>Projects</h1>
+    <ul class="projects">
+      <ProjectCard
+        title="blackout"
+        description="An extension to make blackout poetry on the interwebs. Select text you want to black out and create art from existing pages."
+        image="https://placehold.co/600x400?text=blackout"
+        github="https://github.com/dummy/blackout"
+        demo={{
+          "Firefox":"https://addons.mozilla.org/en-US/firefox/addon/blackout-poetry/",
+          "Chrome/Brave": "https://github.com/up-the-hill/blackout",
+        }}
+        tags={["web extension", "poetry"]}
+      />
+    </ul>
+  </section>
 </Layout>
+
+<style>
+  ul {
+    padding: 0;
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+
+  @media (max-width: 720px) {
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+

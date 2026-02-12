@@ -206,6 +206,12 @@ p {
 }
 
 /* my styles */
+@font-face {
+  font-family: "Manrope Variable";
+  src: url("./Manrope-VariableFont_wght.ttf") format("truetype");
+  font-display: block;
+}
+
 main {
   display: grid;
   min-height: 75dvh;
@@ -243,7 +249,7 @@ code {
 
 h1 {
   font-size: 6rem;
-  line-height: 7rem;
+  line-height: 1.4em;
 
   @media (max-width:720px) {
     font-size: 4rem;
@@ -262,8 +268,10 @@ h1 {
   }
 }
 
-@font-face {
-  font-family: "Manrope Variable";
-  src: url("./Manrope-VariableFont_wght.ttf") format("truetype");
-  font-display: block;
+::-moz-selection {
+  background: var(--accent);
+}
+
+::selection {
+  background: var(--accent);
 }
