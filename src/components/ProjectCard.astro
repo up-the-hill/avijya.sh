@@ -4,11 +4,11 @@ interface Props {
   description: string;
   image?: string;
   github?: string;
-  demo?: Record<string, string>;
+  links?: Record<string, string>;
   tags?: string[];
 }
 
-const { title, description, image, github, demo, tags = [] } = Astro.props;
+const { title, description, image, github, links, tags = [] } = Astro.props;
 ---
 
 <li class="card">
@@ -51,8 +51,8 @@ const { title, description, image, github, demo, tags = [] } = Astro.props;
         )
       }
       {
-        demo &&
-          Object.entries(demo).map(([name, link]) => (
+        links &&
+          Object.entries(links).map(([name, link]) => (
             <a
               href={link}
               target="_blank"

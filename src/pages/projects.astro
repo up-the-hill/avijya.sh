@@ -9,14 +9,25 @@ import ProjectCard from "../components/ProjectCard.astro";
     <ul class="projects">
       <ProjectCard
         title="blackout"
-        description="An extension to make blackout poetry on the interwebs. Select text you want to black out and create art from existing pages."
+        description="An extension to make blackout poetry on the interwebs. Select text you want to black out and create poetry."
         image="https://placehold.co/600x400?text=blackout"
-        github="https://github.com/dummy/blackout"
-        demo={{
-          "Firefox":"https://addons.mozilla.org/en-US/firefox/addon/blackout-poetry/",
+        github="https://github.com/up-the-hill/blackout"
+        links={{
+          Firefox:
+            "https://addons.mozilla.org/en-US/firefox/addon/blackout-poetry/",
           "Chrome/Brave": "https://github.com/up-the-hill/blackout",
         }}
         tags={["web extension", "poetry"]}
+      />
+      <ProjectCard
+        title="sunsets on a map"
+        description="Post your sunsets on a publicly available map and see sunsets around the world."
+        image="https://placehold.co/600x400?text=sunsets-on-a-map"
+        github="https://github.com/up-the-hill/sunsets-on-a-map"
+        links={{
+          Live: "https://sunsets-on-a-map.com/",
+        }}
+        tags={["postgresql", "react", "AWS"]}
       />
     </ul>
   </section>
