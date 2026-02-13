@@ -15,7 +15,8 @@
     "@fontsource-variable/alegreya": "^5.2.8",
     "@fontsource-variable/jetbrains-mono": "^5.2.6",
     "astro": "^5.16.0",
-    "motion": "^12.23.25"
+    "motion": "^12.23.25",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "prettier": "3.6.2",
