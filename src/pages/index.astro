@@ -8,7 +8,9 @@ const posts = (await getCollection("posts"))
   .slice(0, 3); // Get top 3 recent posts
 ---
 
-<Layout>
+<Layout
+  description="Welcome to avijya.sh, Avijya Shrestha's personal website. Explore Avi's projects and articles on programming, gamedev, and more."
+>
   <section class="hero">
     <div class="intro">
       <h1 class="greeting">Hi, I'm Avi.</h1>
