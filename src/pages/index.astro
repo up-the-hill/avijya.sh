@@ -1,179 +1,155 @@
 ---
-import Layout from "../layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
-import PostCard from "../components/PostCard.astro";
-
-const posts = (await getCollection("posts"))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 3); // Get top 3 recent posts
+import "../styles/reset.css";
+import "../styles/global.css";
 ---
 
-<Layout
-  description="Welcome to avijya.sh, Avijya Shrestha's personal website. Explore Avi's projects and articles on programming, gamedev, and more."
->
-  <section class="hero">
-    <div class="intro">
-      <h1 class="greeting">Hi, I'm Avi.</h1>
-      <p class="bio">
-        I'm a developer who's all about having fun. There is joy and art to be
-        found in technology, and I enjoy making that apparent in my work.
-      </p>
-      <div class="actions">
-        <a href="/about" class="btn primary">More about me</a>
-        <a href="/projects" class="btn secondary">See my projects</a>
-      </div>
-    </div>
-  </section>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Avijya Shrestha's personal website" />
+    <meta name="author" content="Avijya Shrestha" />
+    <meta
+      name="keywords"
+      content="avijya, shrestha, avijya shrestha, software developer, software engineer, developer, engineer, web developer, web engineer, web developer in sydney, web engineer in sydney"
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>avijya.sh</title>
+  </head>
+  <body>
+    <main>
+      <section id="intro">
+        <h1>Avijya Shrestha</h1>
+        <span class="devanagari">अविज्य श्रेष्ठ</span>
+        <p>
+          Software developer in Sydney. I build full-stack things, maintain AUR
+          packages, and keep a home server alive.
+        </p>
+      </section>
 
-  <!-- <section class="recent-posts"> -->
-  <!--   <div class="section-header"> -->
-  <!--     <h2>Recent Posts</h2> -->
-  <!--     <a href="/posts" class="view-all">View all &rarr;</a> -->
-  <!--   </div> -->
-  <!--   <ul class="posts-grid"> -->
-  <!--     {posts.map((post) => <PostCard postData={post} />)} -->
-  <!--   </ul> -->
-  <!-- </section> -->
-</Layout>
+      <section id="work">
+        <h2>Selected Work</h2>
 
-<style>
-  /* Hero Section */
-  .hero {
-    padding: 4rem 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 40vh;
-  }
+        <article>
+          <h3><a href="https://sunsets-on-a-map.com">Sunsets</a></h3>
+          <p class="stack">
+            React · Hono · Postgres + PostGIS · TensorFlow.js · MapLibre GL JS
+          </p>
+          <p>
+            Map and share sunset observations. Photos get classified on upload
+            and pinned to an interactive map.
+          </p>
+          <div class="links">
+            <a href="https://sunsets-on-a-map.com">Live</a>
+            <a href="https://github.com/up-the-hill/sunsets-on-a-map">GitHub</a>
+          </div>
+        </article>
 
-  .greeting {
-    line-height: 1.2;
-    font-size: 12rem;
-    font-weight: 800;
-    letter-spacing: -0.08em;
-  }
+        <article>
+          <h3>
+            <a
+              href="https://chromewebstore.google.com/detail/ffcdlpjolgglihiapammdhbdogcgjbki"
+              >Blackout</a
+            >
+          </h3>
+          <p class="stack">JavaScript · Browser Extension</p>
+          <p>
+            Create blackout poetry on any web page. Available on Chrome and
+            Firefox.
+          </p>
+          <div class="links">
+            <a
+              href="https://chromewebstore.google.com/detail/ffcdlpjolgglihiapammdhbdogcgjbki"
+              >Chrome</a
+            >
+            <a
+              href="https://addons.mozilla.org/en-US/firefox/addon/blackout-poetry/"
+              >Firefox</a
+            >
+            <a href="https://github.com/up-the-hill/blackout">GitHub</a>
+          </div>
+        </article>
 
-  .bio {
-    font-family: serif;
-    font-size: 1.25rem;
-    color: var(--gray-dark);
-    max-width: 65ch;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-  }
+        <article>
+          <h3>
+            <a href="https://daily-art-gallery.vercel.app">Daily Art Gallery</a>
+          </h3>
+          <p class="stack">TypeScript · Preact · Vite</p>
+          <p>
+            A new artwork from the Art Institute of Chicago every day. Seeded
+            PRNG — no backend.
+          </p>
+          <div class="links">
+            <a href="https://daily-art-gallery.vercel.app">Live</a>
+            <a href="https://github.com/up-the-hill/daily-art-gallery">GitHub</a
+            >
+          </div>
+        </article>
+      </section>
 
-  .actions {
-    display: flex;
-    gap: 1rem;
-  }
+      <section id="experience">
+        <h2>Experience</h2>
 
-  .btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    border: 2px solid var(--black);
-    text-decoration: none;
-    font-weight: 600;
-    transition:
-      transform 0.5s,
-      box-shadow 0.5s;
-    box-shadow: 6px 6px var(--black);
-    will-change: transform;
+        <article>
+          <h3>Software Developer Intern @ Robotic Marketer</h3>
+          <p class="meta">
+            Jul 2025 – Nov 2025 · Sydney, NSW · Macquarie PACE Program
+          </p>
+          <ul>
+            <li>
+              Built a full-stack project management app (Django + React) on a
+              4-person team; adopted as a client-facing product for 10,000+
+              clients.
+            </li>
+            <li>
+              Designed MongoDB schemas for project data, tasks, comments, and
+              user assignments.
+            </li>
+            <li>
+              Automated email notifications via SendGrid on mentions and project
+              updates.
+            </li>
+            <li>
+              Integrated OpenAI LLM for content generation and in-app chatbot.
+            </li>
+          </ul>
+        </article>
+      </section>
 
-    &:hover {
-      transform: translate3d(-2px, -2px, 0);
-      box-shadow: 8px 8px var(--black);
-      transition:
-        transform 0.15s,
-        box-shadow 0.15s;
-    }
+      <section id="skills">
+        <h2>Skills</h2>
+        <dl>
+          <dt>Languages</dt>
+          <dd>
+            C/C++, Java, JavaScript, TypeScript, HTML, CSS, Python, Bash, Go
+          </dd>
 
-    &:active {
-      transform: translate3d(6px, 6px, 0);
-      box-shadow: none;
-      transition:
-        transform 0.1s,
-        box-shadow 0.1s;
-    }
-  }
+          <dt>Frameworks</dt>
+          <dd>React, Node.js, Next.js, Django, Hono, Express, Flutter</dd>
 
-  .btn.primary {
-    background-color: var(--accent);
-    color: var(--black);
-  }
+          <dt>Tools</dt>
+          <dd>
+            Git, AWS, Google Cloud, CI/CD, Terraform / OpenTofu, Docker,
+            Ansible, Linux
+          </dd>
 
-  .btn.primary:hover {
-    background-color: var(--black);
-    color: var(--white);
-  }
+          <dt>Databases</dt>
+          <dd>PostgreSQL, Firebase, MongoDB, Redis</dd>
+        </dl>
+      </section>
 
-  .btn.secondary {
-    background-color: transparent;
-    color: var(--black);
-    border: 2px solid var(--gray-light);
-  }
+      <section id="about">
+        <h2>About</h2>
+        <p>Arch Linux, Neovim, self-hosted everything. Blender on weekends.</p>
+        <p><a href="/resume.pdf">Download résumé →</a></p>
+      </section>
+    </main>
 
-  .btn.secondary:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  /* Recent Posts Section */
-  /* .recent-posts { */
-  /*   margin-top: 3rem; */
-  /*   padding-top: 2rem; */
-  /*   border-top: 1px dashed var(--gray-light); */
-  /* } */
-  /**/
-  /* .section-header { */
-  /*   display: flex; */
-  /*   justify-content: space-between; */
-  /*   align-items: baseline; */
-  /*   margin-bottom: 2rem; */
-  /* } */
-  /**/
-  /* .section-header h2 { */
-  /*   font-size: 2rem; */
-  /*   margin: 0; */
-  /* } */
-  /**/
-  /* .view-all { */
-  /*   font-size: 1rem; */
-  /*   color: var(--accent); */
-  /*   text-decoration: none; */
-  /*   font-weight: 600; */
-  /* } */
-  /**/
-  /* .view-all:hover { */
-  /*   text-decoration: underline; */
-  /* } */
-  /**/
-  /* .posts-grid { */
-  /*   display: grid; */
-  /*   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-  /*   gap: 2rem; */
-  /*   padding: 0; */
-  /*   list-style: none; */
-  /* } */
-
-  @media (max-width: 720px) {
-    .greeting {
-      font-size: 4rem;
-      margin-bottom: 0.5rem;
-    }
-    .actions {
-      flex-direction: column;
-    }
-    .bio {
-      font-size: 1.1rem;
-      font-family: serif;
-    }
-    .posts-grid {
-      grid-template-columns: 1fr;
-    }
-    .section-header {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-  }
-</style>
+    <footer>
+      <a href="https://github.com/up-the-hill">GitHub</a>
+      <a href="https://linkedin.com/in/avijya-shrestha">LinkedIn</a>
+      <!-- <a href="/public.asc">PGP</a> -->
+      <a href="mailto:hello@avijya.sh">hello@avijya.sh</a>
+    </footer>
+  </body>
+</html>

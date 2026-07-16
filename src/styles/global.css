@@ -1,277 +1,247 @@
-/* Josh Comeau's CSS Reset */
-/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+@import "@fontsource-variable/alegreya";
+@import "@fontsource-variable/jetbrains-mono";
 
-/* 1. Use a more-intuitive box-sizing model */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* 2. Remove default margin */
-* {
-  margin: 0;
-}
-
-/* 3. Enable keyword animations */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    interpolate-size: allow-keywords;
-  }
-}
-
-body {
-  /* 4. Add accessible line-height */
-  line-height: 1.5;
-  /* 5. Improve text rendering */
-  -webkit-font-smoothing: antialiased;
-}
-
-/* 6. Improve media defaults */
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-/* 7. Inherit fonts for form controls */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* 8. Avoid text overflows */
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-
-/* 9. Improve line wrapping */
-p {
-  text-wrap: pretty;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-wrap: balance;
-}
-
-/*
-  10. Create a root stacking context
-*/
-#root,
-#__next {
-  isolation: isolate;
-}
-
-/*
-  my additions to css reset
-*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  /* better title tracking */
-  letter-spacing: -0.05em;
-}
-
-:root {
-  font-display: block;
-}
-
-
-/*
-  Credits:
-  CSS by:
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
- */
-
-:root {
-  --accent-dark: #d08159;
-  --accent: oklch(66.6% 0.179 58.318);
-  --black: oklch(0.1 0 0);
-  --gray-dark: oklch(0.25 0 0);
-  --gray-light: oklch(0.85 0 0);
-  --white: oklch(1 0 0);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --accent-dark: #d08159;
-    --accent: oklch(66.6% 0.179 58.318);
-    --black: oklch(1 0 0);
-    --gray-dark: oklch(0.85 0 0);
-    --gray-light: oklch(0.3 0 0);
-    --white: oklch(0.15 0 0);
-  }
-}
-
-html.dark {
-  --accent-dark: #d08159;
-  --accent: oklch(66.6% 0.179 58.318);
-  --black: oklch(1 0 0);
-  --gray-dark: oklch(0.85 0 0);
-  --gray-light: oklch(0.3 0 0);
-  --white: oklch(0.15 0 0);
-}
-
-html.light {
-  --accent-dark: #d08159;
-  --accent: oklch(66.6% 0.179 58.318);
-  --black: oklch(0.1 0 0);
-  --gray-dark: oklch(0.25 0 0);
-  --gray-light: oklch(0.85 0 0);
-  --white: oklch(1 0 0);
-}
-
-body {
-  font-family: "Manrope Variable", sans-serif;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  background-size: 100% 600px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  color: var(--black);
-  font-size: 20px;
-  line-height: 1.6;
-  /* reduce opacity to reduce contrast, ig? */
-  opacity: 0.9;
-  /* dot grid background */
-  background-color: var(--white);
-  /* background-image: */
-  /*   radial-gradient(var(--gray-light) 0.5px, transparent 0.5px), */
-  /*   radial-gradient(var(--gray-light) 0.5px, var(--white) 0.5px); */
-  /* background-size: 10px 10px; */
-  /* background-position: */
-  /*   0 0, */
-  /*   5px 5px; */
-  /* animated gradient background */
-  /* background: linear-gradient(-45deg, var(--white), var(--gray-light)); */
-  /* background-size: 400% 400%; */
-  /* animation: gradient 5s ease infinite; */
-  /* height: 100vh; */
-}
-
-a {
-  color: var(--black);
-  transition: color 0.2s;
-}
-
-a:hover {
-  color: var(--accent);
-  transition: none;
-}
-
-p {
-  margin-bottom: 1em;
-}
-
-.prose p {
-  margin-bottom: 2em;
-}
-
-.sr-only {
-  border: 0;
-  padding: 0;
-  margin: 0;
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-  clip: rect(1px 1px 1px 1px);
-  /* maybe deprecated but we need to support legacy browsers */
-  clip: rect(1px, 1px, 1px, 1px);
-  /* modern browsers, clip-path works inwards from each corner */
-  clip-path: inset(50%);
-  /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
-  white-space: nowrap;
-}
-
-/* my styles */
 @font-face {
-  font-family: "Manrope Variable";
-  src: url("./Manrope-VariableFont_wght.ttf") format("truetype");
-  font-display: block;
+  font-family: "Nithya Ranjana";
+  src: url("../fonts/NithyaRanjanaDU-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
+
+/* VARIABLES */
+
+/* prettier-ignore */
+:root {
+  --bg:      #060608;
+  --text:    #ffffff;
+  --body:    #d4d4d4;
+  --muted:   #b6b6b6;
+  --accent:  #ff4c3f;
+  --border:  #676767;
+
+  --serif: "Alegreya Variable", Georgia, serif;
+  --mono: "JetBrains Mono Variable", monospace;
+
+  --w: 70ch;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--serif);
+  background: var(--bg);
+  color: var(--text);
+  max-width: var(--w);
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+/* LAYOUT */
 
 main {
+  padding-block: 7rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5.5rem;
+  counter-reset: section;
+}
+
+footer {
+  padding-block: 1.75rem 4rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 2rem;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+
+/* LINKS */
+
+a {
+  color: inherit;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--muted);
+  transition:
+    color 0.15s,
+    text-decoration-color 0.15s;
+
+  &:hover {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+  }
+}
+
+/* SECTION LABELS */
+
+@counter-style devanagari-padded {
+  system: extends devanagari;
+  pad: 2 "०";
+}
+
+h2 {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 2.25rem;
+  counter-increment: section;
+
+  &::before {
+    content: counter(section, devanagari-padded) "  ";
+    font-family: "Nithya Ranjana", serif;
+    color: var(--accent);
+  }
+}
+
+/* INTRO */
+
+#intro {
+  h1 {
+    font-size: clamp(2.75rem, 7vw, 4rem);
+    font-weight: 700;
+    line-height: 1.08;
+    margin-bottom: 0.2rem;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: var(--body);
+    max-width: 48ch;
+    line-height: 1.6;
+  }
+}
+
+.devanagari {
+  display: block;
+  font-family: "Nithya Ranjana", serif;
+  font-size: 1.9rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+/* WORK */
+
+#work {
+  article {
+    padding-block: 1.75rem;
+    border-top: 1px solid var(--border);
+    display: grid;
+    gap: 0.6rem;
+
+    &:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .stack {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  p:not(.stack) {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--body);
+  }
+
+  .links {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.25rem;
+  }
+}
+
+/* EXPERIENCE */
+
+#experience {
+  article {
+    display: grid;
+    gap: 1rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .meta {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: -0.5rem;
+  }
+
+  ul {
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  li {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--body);
+  }
+}
+
+/* SKILLS */
+
+#skills {
+  dl {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  dt {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--body);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 0.15rem;
+  }
+
+  dd {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+}
+
+/* ABOUT */
+
+#about {
   display: grid;
-  min-height: 75dvh;
-  width: 66rem;
-  max-width: calc(100% - 2em);
-  margin: auto;
-  padding: 3rem 1rem;
-}
 
-article {
-  min-width: 0;
-}
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--body);
+  }
 
-pre {
-  padding: 1rem;
-  overflow-x: auto;
-  max-width: 100%;
-}
-
-pre code {
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-}
-
-pre span {
-  max-width: none;
-}
-
-code {
-  font-family: "JetBrains Mono Variable", sans-serif;
-  font-size: 1rem;
-}
-
-h1 {
-  font-size: 6rem;
-  line-height: 1.4em;
-
-  @media (max-width:720px) {
-    font-size: 4rem;
-    line-height: 4.5rem;
+  a {
+    font-family: var(--mono);
+    font-size: 0.8rem;
   }
 }
 
-@media (max-width: 720px) {
-  body {
-    font-size: 18px;
-  }
-
-  main {
-    padding: 1rem;
-    width: auto;
-  }
-}
-
-::-moz-selection {
-  background: var(--accent);
-}
+/* SELECTION */
 
 ::selection {
   background: var(--accent);
+  color: var(--bg);
 }
