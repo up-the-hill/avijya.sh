@@ -1,0 +1,247 @@
+@import "@fontsource-variable/alegreya";
+@import "@fontsource-variable/jetbrains-mono";
+
+@font-face {
+  font-family: "Nithya Ranjana";
+  src: url("../fonts/NithyaRanjanaDU-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* VARIABLES */
+
+/* prettier-ignore */
+:root {
+  --bg:      #060608;
+  --text:    #ffffff;
+  --body:    #d4d4d4;
+  --muted:   #b6b6b6;
+  --accent:  #ff4c3f;
+  --border:  #676767;
+
+  --serif: "Alegreya Variable", Georgia, serif;
+  --mono: "JetBrains Mono Variable", monospace;
+
+  --w: 70ch;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--serif);
+  background: var(--bg);
+  color: var(--text);
+  max-width: var(--w);
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+/* LAYOUT */
+
+main {
+  padding-block: 7rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5.5rem;
+  counter-reset: section;
+}
+
+footer {
+  padding-block: 1.75rem 4rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 2rem;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+
+/* LINKS */
+
+a {
+  color: inherit;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--muted);
+  transition:
+    color 0.15s,
+    text-decoration-color 0.15s;
+
+  &:hover {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+  }
+}
+
+/* SECTION LABELS */
+
+@counter-style devanagari-padded {
+  system: extends devanagari;
+  pad: 2 "०";
+}
+
+h2 {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 2.25rem;
+  counter-increment: section;
+
+  &::before {
+    content: counter(section, devanagari-padded) "  ";
+    font-family: "Nithya Ranjana", serif;
+    color: var(--accent);
+  }
+}
+
+/* INTRO */
+
+#intro {
+  h1 {
+    font-size: clamp(2.75rem, 7vw, 4rem);
+    font-weight: 700;
+    line-height: 1.08;
+    margin-bottom: 0.2rem;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: var(--body);
+    max-width: 48ch;
+    line-height: 1.6;
+  }
+}
+
+.devanagari {
+  display: block;
+  font-family: "Nithya Ranjana", serif;
+  font-size: 1.9rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+/* WORK */
+
+#work {
+  article {
+    padding-block: 1.75rem;
+    border-top: 1px solid var(--border);
+    display: grid;
+    gap: 0.6rem;
+
+    &:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .stack {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  p:not(.stack) {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--body);
+  }
+
+  .links {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.25rem;
+  }
+}
+
+/* EXPERIENCE */
+
+#experience {
+  article {
+    display: grid;
+    gap: 1rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .meta {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: -0.5rem;
+  }
+
+  ul {
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  li {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--body);
+  }
+}
+
+/* SKILLS */
+
+#skills {
+  dl {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  dt {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--body);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 0.15rem;
+  }
+
+  dd {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+}
+
+/* ABOUT */
+
+#about {
+  display: grid;
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--body);
+  }
+
+  a {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+  }
+}
+
+/* SELECTION */
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}

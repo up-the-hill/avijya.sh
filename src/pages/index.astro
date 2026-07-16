@@ -1,3 +1,155 @@
 ---
+import "../styles/reset.css";
+import "../styles/global.css";
 ---
-<html><body><h1>hello</h1></body></html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Avijya Shrestha's personal website" />
+    <meta name="author" content="Avijya Shrestha" />
+    <meta
+      name="keywords"
+      content="avijya, shrestha, avijya shrestha, software developer, software engineer, developer, engineer, web developer, web engineer, web developer in sydney, web engineer in sydney"
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>avijya.sh</title>
+  </head>
+  <body>
+    <main>
+      <section id="intro">
+        <h1>Avijya Shrestha</h1>
+        <span class="devanagari">अविज्य श्रेष्ठ</span>
+        <p>
+          Software developer in Sydney. I build full-stack things, maintain AUR
+          packages, and keep a home server alive.
+        </p>
+      </section>
+
+      <section id="work">
+        <h2>Selected Work</h2>
+
+        <article>
+          <h3><a href="https://sunsets-on-a-map.com">Sunsets</a></h3>
+          <p class="stack">
+            React · Hono · Postgres + PostGIS · TensorFlow.js · MapLibre GL JS
+          </p>
+          <p>
+            Map and share sunset observations. Photos get classified on upload
+            and pinned to an interactive map.
+          </p>
+          <div class="links">
+            <a href="https://sunsets-on-a-map.com">Live</a>
+            <a href="https://github.com/up-the-hill/sunsets-on-a-map">GitHub</a>
+          </div>
+        </article>
+
+        <article>
+          <h3>
+            <a
+              href="https://chromewebstore.google.com/detail/ffcdlpjolgglihiapammdhbdogcgjbki"
+              >Blackout</a
+            >
+          </h3>
+          <p class="stack">JavaScript · Browser Extension</p>
+          <p>
+            Create blackout poetry on any web page. Available on Chrome and
+            Firefox.
+          </p>
+          <div class="links">
+            <a
+              href="https://chromewebstore.google.com/detail/ffcdlpjolgglihiapammdhbdogcgjbki"
+              >Chrome</a
+            >
+            <a
+              href="https://addons.mozilla.org/en-US/firefox/addon/blackout-poetry/"
+              >Firefox</a
+            >
+            <a href="https://github.com/up-the-hill/blackout">GitHub</a>
+          </div>
+        </article>
+
+        <article>
+          <h3>
+            <a href="https://daily-art-gallery.vercel.app">Daily Art Gallery</a>
+          </h3>
+          <p class="stack">TypeScript · Preact · Vite</p>
+          <p>
+            A new artwork from the Art Institute of Chicago every day. Seeded
+            PRNG — no backend.
+          </p>
+          <div class="links">
+            <a href="https://daily-art-gallery.vercel.app">Live</a>
+            <a href="https://github.com/up-the-hill/daily-art-gallery">GitHub</a
+            >
+          </div>
+        </article>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+
+        <article>
+          <h3>Software Developer Intern @ Robotic Marketer</h3>
+          <p class="meta">
+            Jul 2025 – Nov 2025 · Sydney, NSW · Macquarie PACE Program
+          </p>
+          <ul>
+            <li>
+              Built a full-stack project management app (Django + React) on a
+              4-person team; adopted as a client-facing product for 10,000+
+              clients.
+            </li>
+            <li>
+              Designed MongoDB schemas for project data, tasks, comments, and
+              user assignments.
+            </li>
+            <li>
+              Automated email notifications via SendGrid on mentions and project
+              updates.
+            </li>
+            <li>
+              Integrated OpenAI LLM for content generation and in-app chatbot.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <dl>
+          <dt>Languages</dt>
+          <dd>
+            C/C++, Java, JavaScript, TypeScript, HTML, CSS, Python, Bash, Go
+          </dd>
+
+          <dt>Frameworks</dt>
+          <dd>React, Node.js, Next.js, Django, Hono, Express, Flutter</dd>
+
+          <dt>Tools</dt>
+          <dd>
+            Git, AWS, Google Cloud, CI/CD, Terraform / OpenTofu, Docker,
+            Ansible, Linux
+          </dd>
+
+          <dt>Databases</dt>
+          <dd>PostgreSQL, Firebase, MongoDB, Redis</dd>
+        </dl>
+      </section>
+
+      <section id="about">
+        <h2>About</h2>
+        <p>Arch Linux, Neovim, self-hosted everything. Blender on weekends.</p>
+        <p><a href="/resume.pdf">Download résumé →</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <a href="https://github.com/up-the-hill">GitHub</a>
+      <a href="https://linkedin.com/in/avijya-shrestha">LinkedIn</a>
+      <!-- <a href="/public.asc">PGP</a> -->
+      <a href="mailto:hello@avijya.sh">hello@avijya.sh</a>
+    </footer>
+  </body>
+</html>
