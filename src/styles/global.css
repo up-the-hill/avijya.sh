@@ -15,10 +15,12 @@
 :root {
   --bg:      #060608;
   --text:    #ffffff;
-  --body:    #d4d4d4;
-  --muted:   #b6b6b6;
   --accent:  #ff4c3f;
-  --border:  #676767;
+
+  /* additional colors are derived */
+  --body:    color-mix(in oklch, var(--text), var(--bg) 15%);
+  --muted:   color-mix(in oklch, var(--text), var(--bg) 25%);
+  --border:  color-mix(in oklch, var(--text), var(--bg) 50%);
 
   --serif: "Alegreya Variable", Georgia, serif;
   --mono: "JetBrains Mono Variable", monospace;
