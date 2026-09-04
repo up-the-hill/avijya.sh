@@ -20,7 +20,13 @@ import "../styles/global.css";
     <div class="reading-progress" aria-hidden="true"></div>
     <main>
       <section id="intro">
-        <h1>Avijya Shrestha</h1>
+        <h1 aria-label="Avijya Shrestha">
+          {
+            "Avijya Shrestha"
+              .split("")
+              .map((ch) => (ch === " " ? " " : <span aria-hidden="true">{ch}</span>))
+          }
+        </h1>
         <span class="devanagari">अभिज्य श्रेष्ठ</span>
         <p>
           Software developer in Sydney. I build full-stack things, maintain AUR

@@ -89,6 +89,12 @@ h2 {
   text-transform: uppercase;
   margin-bottom: 2.25rem;
   counter-increment: section;
+  font-variation-settings: "wght" 400;
+  transition: font-variation-settings 0.3s ease;
+
+  &:hover {
+    font-variation-settings: "wght" 680;
+  }
 
   &::before {
     content: counter(section, devanagari-padded) "  ";
@@ -106,6 +112,24 @@ h2 {
     line-height: 1.08;
     margin-bottom: 0.2rem;
     letter-spacing: -0.02em;
+
+    span {
+      font-variation-settings: "wght" 700;
+      transition: font-variation-settings 0.25s ease;
+    }
+
+    /* hovered glyph peaks, neighbours taper off for a wave */
+    span:hover {
+      font-variation-settings: "wght" 900;
+    }
+    span:hover + span,
+    span:has(+ span:hover) {
+      font-variation-settings: "wght" 800;
+    }
+    span:hover + span + span,
+    span:has(+ span + span:hover) {
+      font-variation-settings: "wght" 730;
+    }
   }
 
   p {
