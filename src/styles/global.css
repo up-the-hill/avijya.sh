@@ -239,6 +239,30 @@ h2 {
   }
 }
 
+/* READING PROGRESS */
+/* experimental, maybe remove? */
+
+@supports (animation-timeline: scroll()) {
+  .reading-progress {
+    position: fixed;
+    top: 0;
+    inset-inline: 0;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    z-index: 100;
+    animation: reading-progress-grow linear both;
+    animation-timeline: scroll(root block);
+  }
+
+  @keyframes reading-progress-grow {
+    to {
+      transform: scaleX(1);
+    }
+  }
+}
+
 /* SELECTION */
 
 ::selection {
