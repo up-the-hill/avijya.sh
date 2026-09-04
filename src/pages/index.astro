@@ -24,7 +24,9 @@ import "../styles/global.css";
           {
             "Avijya Shrestha"
               .split("")
-              .map((ch) => (ch === " " ? " " : <span aria-hidden="true">{ch}</span>))
+              .map((ch) =>
+                ch === " " ? " " : <span aria-hidden="true">{ch}</span>,
+              )
           }
         </h1>
         <span class="devanagari">अभिज्य श्रेष्ठ</span>
@@ -196,13 +198,27 @@ import "../styles/global.css";
 
       <section id="about">
         <h2>About</h2>
-        <p>Arch Linux, Neovim, self-hosted everything. Blender on weekends.</p>
+        <ul>
+          <li>Arch Linux user repository package maintainer</li>
+          <li>
+            Neovim
+            <a
+              href="https://github.com/up-the-hill/dotfiles/tree/main/.config/nvim"
+              >(Link to dotfiles)</a
+            >
+          </li>
+          <li>home server</li>
+          <li>open source</li>
+          <li>split keebs</li>
+          <li>ABRSM grade 5</li>
+        </ul>
         <p><a href="/avijya-shrestha-resume.pdf">Download résumé →</a></p>
       </section>
     </main>
 
     <footer>
       <a href="https://github.com/up-the-hill">GitHub</a>
+      <a href="https://github.com/up-the-hill/dotfiles">dotfiles</a>
       <a href="https://linkedin.com/in/avijya-shrestha">LinkedIn</a>
       <a href="/606031DABC47473E2380F2DF295FD3BE25C7A602-public.asc">PGP</a>
       <a href="mailto:hello@avijya.sh">hello@avijya.sh</a>
