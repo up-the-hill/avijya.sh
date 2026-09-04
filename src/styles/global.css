@@ -136,6 +136,15 @@ h2 {
     &:last-child {
       border-bottom: 1px solid var(--border);
     }
+
+    /* dim content only */
+    > * {
+      transition: opacity 0.25s;
+    }
+  }
+
+  &:has(article:hover) article:not(:hover) > * {
+    opacity: 0.4;
   }
 
   h3 {
