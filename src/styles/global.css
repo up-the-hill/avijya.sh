@@ -25,7 +25,7 @@
   --serif: "Alegreya Variable", Georgia, serif;
   --mono: "JetBrains Mono Variable", monospace;
 
-  --w: 70ch;
+  --w: 65ch;
 }
 
 html {
@@ -108,12 +108,22 @@ h2 {
 /* INTRO */
 
 #intro {
+  .name-deva {
+    display: block;
+    font-family: "Nithya Ranjana", serif;
+    font-size: clamp(5rem, 14vw, 7rem);
+    line-height: 1.1;
+    color: var(--accent);
+    margin-bottom: 0.35rem;
+  }
+
   h1 {
-    font-size: clamp(2.75rem, 7vw, 4rem);
+    font-size: clamp(1.75rem, 4.5vw, 2.6rem);
     font-weight: 700;
-    line-height: 1.08;
-    margin-bottom: 0.2rem;
+    line-height: 1.1;
+    margin-bottom: 1.75rem;
     letter-spacing: -0.02em;
+    color: var(--body);
 
     span {
       font-variation-settings: "wght" 700;
@@ -142,12 +152,9 @@ h2 {
   }
 }
 
-.devanagari {
-  display: block;
-  font-family: "Nithya Ranjana", serif;
-  font-size: 1.9rem;
-  color: var(--muted);
-  margin-bottom: 2rem;
+:lang(ne) {
+  line-height: 1.1;
+  letter-spacing: 0;
 }
 
 /* WORK */
